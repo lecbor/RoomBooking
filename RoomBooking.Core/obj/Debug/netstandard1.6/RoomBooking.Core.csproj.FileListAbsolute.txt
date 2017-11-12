@@ -1,0 +1,7 @@
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\bin\Debug\netstandard1.6\RoomBooking.Core.deps.json
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\bin\Debug\netstandard1.6\RoomBooking.Core.dll
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\bin\Debug\netstandard1.6\RoomBooking.Core.pdb
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\obj\Debug\netstandard1.6\RoomBooking.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\obj\Debug\netstandard1.6\RoomBooking.Core.AssemblyInfo.cs
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\obj\Debug\netstandard1.6\RoomBooking.Core.dll
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Core\obj\Debug\netstandard1.6\RoomBooking.Core.pdb

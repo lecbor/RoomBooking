@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <PackageId>RoomBooking.Infrastructure</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RoomBooking.Core\RoomBooking.Core.csproj" />    
+  </ItemGroup>
+
+</Project>

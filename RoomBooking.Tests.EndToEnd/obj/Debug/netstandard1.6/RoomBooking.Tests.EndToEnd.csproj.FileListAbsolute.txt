@@ -5,3 +5,11 @@ C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\net
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.AssemblyInfo.cs
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.dll
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\bin\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.deps.json
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\bin\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\bin\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.csprojResolveAssemblyReference.cache
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.csproj.CoreCompileInputs.cache
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.AssemblyInfo.cs
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Tests.EndToEnd\obj\Debug\netstandard1.6\RoomBooking.Tests.EndToEnd.pdb

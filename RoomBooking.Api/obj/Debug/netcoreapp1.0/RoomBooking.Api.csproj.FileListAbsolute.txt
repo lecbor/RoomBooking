@@ -11,3 +11,17 @@ C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.AssemblyInfo.cs
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.dll
 C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Api.deps.json
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Api.runtimeconfig.json
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Api.runtimeconfig.dev.json
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Api.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Api.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Core.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Infrastructure.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Infrastructure.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\bin\Debug\netcoreapp1.0\RoomBooking.Core.pdb
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.csprojResolveAssemblyReference.cache
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.csproj.CoreCompileInputs.cache
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.AssemblyInfo.cs
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.dll
+C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.pdb

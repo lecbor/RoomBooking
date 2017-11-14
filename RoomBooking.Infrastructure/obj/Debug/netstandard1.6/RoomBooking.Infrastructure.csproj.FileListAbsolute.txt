@@ -17,3 +17,4 @@ C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Infrastruc
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Infrastructure\obj\Debug\netstandard1.6\RoomBooking.Infrastructure.AssemblyInfo.cs
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Infrastructure\obj\Debug\netstandard1.6\RoomBooking.Infrastructure.dll
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Infrastructure\obj\Debug\netstandard1.6\RoomBooking.Infrastructure.pdb
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Infrastructure\obj\Debug\netstandard1.6\RoomBooking.Infrastructure.csprojResolveAssemblyReference.cache

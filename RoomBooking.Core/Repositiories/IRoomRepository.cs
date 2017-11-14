@@ -9,7 +9,7 @@ namespace RoomBooking.Core.Repositiories
 {
     public interface IRoomRepository
     {
-        Room Get(string name);
+        Room Get(string number);
 
         IEnumerable<Room> GetAll();
 

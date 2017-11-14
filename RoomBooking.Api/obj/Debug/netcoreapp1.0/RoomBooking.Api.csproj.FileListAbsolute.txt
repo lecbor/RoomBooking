@@ -25,3 +25,4 @@ C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\De
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.AssemblyInfo.cs
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.dll
 C:\Users\borkowskil\Desktop\repos\RoomBooking\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.pdb
+C:\Users\Lech\Desktop\repos\RoomBooking\RoomBooking.Api\obj\Debug\netcoreapp1.0\RoomBooking.Api.csprojResolveAssemblyReference.cache

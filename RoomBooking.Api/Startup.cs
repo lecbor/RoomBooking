@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using RoomBooking.Infrastructure.Services;
+using RoomBooking.Core.Repositiories;
+using RoomBooking.Infrastructure.Repositories;
 
 namespace RoomBooking.Api
 {
@@ -28,6 +31,8 @@ namespace RoomBooking.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddScoped<IRoomService, RoomSerivce>();
+            services.AddScoped<IRoomRepository, InMemoryRoomRepository>();
             services.AddMvc();
         }
 

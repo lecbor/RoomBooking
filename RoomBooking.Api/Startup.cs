@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using RoomBooking.Infrastructure.Services;
 using RoomBooking.Core.Repositiories;
 using RoomBooking.Infrastructure.Repositories;
+using RoomBooking.Infrastructure.Mappers;
 
 namespace RoomBooking.Api
 {
@@ -33,6 +34,7 @@ namespace RoomBooking.Api
             // Add framework services.
             services.AddScoped<IRoomService, RoomSerivce>();
             services.AddScoped<IRoomRepository, InMemoryRoomRepository>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddMvc();
         }
 

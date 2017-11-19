@@ -9,14 +9,14 @@ namespace RoomBooking.Core.Repositiories
 {
     public interface IRoomRepository
     {
-        Room Get(string number);
+        Task<Room> GetAsync(string number);
 
-        IEnumerable<Room> GetAll();
+        Task<IEnumerable<Room>> GetAllAsync();
 
-        void Add(Room room);
+        Task AddAsync(Room room);
 
-        void Update(Room room);
+        Task UpdateAsync(Room room);
 
-        void Remove(string name);
+        Task RemoveAsync(string name);
     }
 }

@@ -6,51 +6,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RoomBooking.Infrastructure.DTO;
+using AutoMapper;
 
 namespace RoomBooking.Infrastructure.Services
 {
     public class RoomSerivce : IRoomService
     {
         private readonly IRoomRepository _roomRepository;
+        private readonly IMapper _mapper;
 
-        public RoomSerivce(IRoomRepository roomRepository)
+        public RoomSerivce(IRoomRepository roomRepository, IMapper mapper)
         {
             _roomRepository = roomRepository;
+            _mapper = mapper;
         }
 
-        public RoomDTO Get(string number)
+        public async Task<RoomDTO> GetAsync(string number)
         {
-            var room = _roomRepository.Get(number);
+            var room = await _roomRepository.GetAsync(number);
 
-            return new RoomDTO
-            {
-                Id = room.Id,
-                Name = room.Name,
-                RoomNumber = room.RoomNumber,
-                Lectern = room.Lectern,
-                VotingSystem = room.VotingSystem,
-                SoundSystem = room.SoundSystem,
-                MagneticWall = room.MagneticWall,
-                Computer = room.Computer,
-                InterpretationService = room.InterpretationService,
-                BrainstormingWall = room.BrainstormingWall,
-                LEDWall = room.LEDWall,
-                Microphone = room.Microphone,
-                Multiphone = room.Multiphone,
-                LCDScreen = room.LCDScreen,
-                Flipchart = room.Flipchart,
-                WhiteScreen = room.Flipchart,
-                Videoconference = room.Videoconference,
-                Projector = room.Projector
-            };
+            return _mapper.Map<Room,RoomDTO>(room);
         }
 
-        public void Register(string name, string number, bool lectern, bool voting, bool sound,
+        public async Task RegisterAsync(string name, string number, bool lectern, bool voting, bool sound,
                             bool magnetic, bool computer, bool interpreter, bool brain, bool led,
                             bool microphone, bool multiphone, bool lcd, bool flipchart, bool whitescren, 
                             bool videoconference, bool projector)
         {
-            var room = _roomRepository.Get(number);
+            var room = await _roomRepository.GetAsync(number);
 
             if(room!= null)
             {
@@ -62,7 +45,7 @@ namespace RoomBooking.Infrastructure.Services
                             microphone, multiphone, lcd, flipchart, whitescren,
                             videoconference, projector);
 
-            _roomRepository.Add(room);
+            await _roomRepository.AddAsync(room);
         }
     }
 }

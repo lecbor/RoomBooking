@@ -20,16 +20,26 @@ namespace RoomBooking.Api.Controllers
         }
 
         [HttpGet("{number}")]
-        public async Task<RoomDTO> Get(string number)
-            => await _roomservice.GetAsync(number);
+        public async Task<IActionResult> Get(string number)
+        { 
+            var room = await _roomservice.GetAsync(number);
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            return Json(room);
+        }
 
         [HttpPost("")]
-        public async Task Post([FromBody]Create request)
+        public async Task<IActionResult> Post([FromBody]Create request)
         {
            await _roomservice.RegisterAsync(request.Name, request.RoomNumber, request.Lectern, request.VotingSystem, 
                 request.SoundSystem, request.MagneticWall, request.Computer, request.InterpretationService,
                 request.BrainstormingWall, request.LEDWall, request.Microphone, request.Multiphone, request.LCDScreen, 
                 request.Flipchart, request.WhiteScreen, request.Videoconference, request.Projector);
+
+            return Created($"rooms/{request.RoomNumber}", new object());
         }
 
     }

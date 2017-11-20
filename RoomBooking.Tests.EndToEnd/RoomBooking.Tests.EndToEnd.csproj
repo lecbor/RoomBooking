@@ -1,8 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
     <PackageId>RoomBooking.Tests.EndToEnd</PackageId>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="1.1.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Moq" Version="4.7.145"></PackageReference>
+    <PackageReference Include="FluentAssertions" Version="4.19.4"></PackageReference>
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\RoomBooking.Api\RoomBooking.Api.csproj" />
+    <ProjectReference Include="..\RoomBooking.Infrastructure\RoomBooking.Infrastructure.csproj" />
+  </ItemGroup>
+  
+  
+  
 </Project>

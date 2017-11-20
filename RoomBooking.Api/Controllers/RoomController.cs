@@ -9,7 +9,7 @@ using RoomBooking.Infrastructure.Commands.Rooms;
 
 namespace RoomBooking.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class RoomController : Controller
     {
         private readonly IRoomService _roomservice;
@@ -32,14 +32,14 @@ namespace RoomBooking.Api.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Post([FromBody]Create request)
+        public async Task<IActionResult> Post([FromBody]CreateRoom request)
         {
            await _roomservice.RegisterAsync(request.Name, request.RoomNumber, request.Lectern, request.VotingSystem, 
                 request.SoundSystem, request.MagneticWall, request.Computer, request.InterpretationService,
                 request.BrainstormingWall, request.LEDWall, request.Microphone, request.Multiphone, request.LCDScreen, 
                 request.Flipchart, request.WhiteScreen, request.Videoconference, request.Projector);
 
-            return Created($"rooms/{request.RoomNumber}", new object());
+            return Created($"room/{request.RoomNumber}", new object());
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Infrastructure.Commands.Rooms
 {
-    public class Create
+    public class CreateRoom : ICommand
     {
         public string Name { get; set; }
 

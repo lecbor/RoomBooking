@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using RoomBooking.Infrastructure.DTO;
 using RoomBooking.Infrastructure.Services;
 using RoomBooking.Infrastructure.Commands.Rooms;
+using RoomBooking.Infrastructure.Commands;
 
 namespace RoomBooking.Api.Controllers
 {
@@ -13,10 +14,12 @@ namespace RoomBooking.Api.Controllers
     public class RoomController : Controller
     {
         private readonly IRoomService _roomservice;
+        private readonly ICommandDispacher _commandDispatcher;
 
-        public RoomController(IRoomService roomService)
+        public RoomController(IRoomService roomService, ICommandDispacher commandDispacher)
         {
             _roomservice = roomService;
+            _commandDispatcher = commandDispacher;
         }
 
         [HttpGet("{number}")]
@@ -32,14 +35,18 @@ namespace RoomBooking.Api.Controllers
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Post([FromBody]CreateRoom request)
+        public async Task<IActionResult> Post([FromBody]CreateRoom command)
         {
-           await _roomservice.RegisterAsync(request.Name, request.RoomNumber, request.Lectern, request.VotingSystem, 
-                request.SoundSystem, request.MagneticWall, request.Computer, request.InterpretationService,
-                request.BrainstormingWall, request.LEDWall, request.Microphone, request.Multiphone, request.LCDScreen, 
-                request.Flipchart, request.WhiteScreen, request.Videoconference, request.Projector);
+            await _commandDispatcher.DispatchAsync(command);
 
-            return Created($"room/{request.RoomNumber}", new object());
+             /*
+            await _roomservice.RegisterAsync(command.Name, command.RoomNumber, command.Lectern, command.VotingSystem, 
+            command.SoundSystem, command.MagneticWall, command.Computer, command.InterpretationService,
+            command.BrainstormingWall, command.LEDWall, command.Microphone, command.Multiphone, command.LCDScreen, 
+            command.Flipchart, command.WhiteScreen, command.Videoconference, command.Projector);
+            */
+
+            return Created($"room/{command.RoomNumber}", new object());
         }
 
     }

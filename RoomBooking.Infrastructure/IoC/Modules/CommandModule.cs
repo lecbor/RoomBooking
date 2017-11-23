@@ -23,7 +23,7 @@ namespace RoomBooking.Infrastructure.IoC.Modules
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<CommandDispatcher>()
-                .As<ICommandDispacher>()
+                .As<ICommandDispatcher>()
                 .InstancePerLifetimeScope();
         }
     }

@@ -16,19 +16,8 @@ using Xunit;
 
 namespace RoomBooking.Tests.EndToEnd.Controllers
 {
-    public class RoomsControllerTests
+    public class RoomsControllerTests : ControllerTestsBase
     {
-        private readonly TestServer _server;
-        private readonly HttpClient _client;
-
-
-        public RoomsControllerTests()
-        {
-            _server = new TestServer(new WebHostBuilder()
-                .UseStartup<Startup>());
-            _client = _server.CreateClient();
-        }
-
         [Fact]
         public async Task given_valid_roomNumber_room_should_exist()
         {
@@ -41,14 +30,14 @@ namespace RoomBooking.Tests.EndToEnd.Controllers
         public async Task given_invalid_roomNumber_room_should_not_exist()
         {
             var roomNumber = "919";
-            var response = await _client.GetAsync($"room/{roomNumber}");
+            var response = await Client.GetAsync($"room/{roomNumber}");
             response.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.NotFound);
         }
 
         [Fact]
         public async Task given_unique_roomNumber_room_should_be_created()
         {
-            var request = new CreateRoom
+            var command = new CreateRoom
             {
                 Name = "",
                 RoomNumber = "1001",
@@ -69,29 +58,22 @@ namespace RoomBooking.Tests.EndToEnd.Controllers
                 Projector = true
              };
 
-            var payload = GetPayload(request);
-            var response = await _client.PostAsync("room",payload);
+            var payload = GetPayload(command);
+            var response = await Client.PostAsync("room",payload);
             response.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.Created);
-            response.Headers.Location.ToString().ShouldBeEquivalentTo($"room/{request.RoomNumber}");
+            response.Headers.Location.ToString().ShouldBeEquivalentTo($"room/{command.RoomNumber}");
 
-            var room = await GetRoomAsync(request.RoomNumber);
-            room.RoomNumber.ShouldBeEquivalentTo(request.RoomNumber);
+            var room = await GetRoomAsync(command.RoomNumber);
+            room.RoomNumber.ShouldBeEquivalentTo(command.RoomNumber);
 
         }
 
         private async Task<RoomDTO> GetRoomAsync(string roomNumber)
         {
-            var response = await _client.GetAsync($"room/{roomNumber}");
+            var response = await Client.GetAsync($"room/{roomNumber}");
             var respondeString = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<RoomDTO>(respondeString);
-        }
-
-            private static StringContent GetPayload(object data)
-        {
-            var json = JsonConvert.SerializeObject(data);
-
-            return new StringContent(json, Encoding.UTF8, "Application/json");
         }
     }
 }

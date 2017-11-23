@@ -13,6 +13,7 @@ using RoomBooking.Infrastructure.Repositories;
 using RoomBooking.Infrastructure.Mappers;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using RoomBooking.Infrastructure.IoC.Modules;
 
 namespace RoomBooking.Api
 {
@@ -43,6 +44,8 @@ namespace RoomBooking.Api
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
+            builder.RegisterModule<CommandModule>();
+            builder.RegisterModule(new SettingsModule(Configuration));
             ApplicationContainer = builder.Build();
 
             return new AutofacServiceProvider(ApplicationContainer);

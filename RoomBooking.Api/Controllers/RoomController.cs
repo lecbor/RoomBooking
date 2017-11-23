@@ -7,19 +7,23 @@ using RoomBooking.Infrastructure.DTO;
 using RoomBooking.Infrastructure.Services;
 using RoomBooking.Infrastructure.Commands.Rooms;
 using RoomBooking.Infrastructure.Commands;
+using RoomBooking.Infrastructure.Settings;
 
 namespace RoomBooking.Api.Controllers
 {
     [Route("[controller]")]
-    public class RoomController : Controller
+    public class RoomController  : ApiControllerBase
     {
         private readonly IRoomService _roomservice;
-        private readonly ICommandDispacher _commandDispatcher;
+        private readonly GeneralSettings _settings;
 
-        public RoomController(IRoomService roomService, ICommandDispacher commandDispacher)
+
+        public RoomController(IRoomService roomService,
+            ICommandDispatcher commandDispatcher, 
+            GeneralSettings settings) : base(commandDispatcher)
         {
             _roomservice = roomService;
-            _commandDispatcher = commandDispacher;
+            _settings = settings;
         }
 
         [HttpGet("{number}")]
@@ -37,8 +41,7 @@ namespace RoomBooking.Api.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Post([FromBody]CreateRoom command)
         {
-            await _commandDispatcher.DispatchAsync(command);
-
+            await CommandDispatcher.DispatchAsync(command);
              /*
             await _roomservice.RegisterAsync(command.Name, command.RoomNumber, command.Lectern, command.VotingSystem, 
             command.SoundSystem, command.MagneticWall, command.Computer, command.InterpretationService,

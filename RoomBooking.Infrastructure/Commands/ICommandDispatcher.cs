@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Infrastructure.Commands
 {
-    public interface ICommandDispacher
+    public interface ICommandDispatcher
     {
         Task DispatchAsync<T>(T command) where T : ICommand;
     }

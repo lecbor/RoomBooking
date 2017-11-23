@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Infrastructure.Commands
 {
-    public class CommandDispatcher : ICommandDispacher
+    public class CommandDispatcher : ICommandDispatcher
     {
         private readonly IComponentContext _context;
 

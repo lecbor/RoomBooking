@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RoomBooking.Infrastructure.Commands
+namespace RoomBooking.Infrastructure.Settings
 {
-    //marker interface
-    public interface ICommand
+    public class GeneralSettings
     {
+        public string Name { get; set; }
     }
 }

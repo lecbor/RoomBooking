@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Infrastructure.Services
 {
-    public interface IRoomService
+    public interface IRoomService : IService
     {
         Task<RoomDTO> GetAsync(string number);
 

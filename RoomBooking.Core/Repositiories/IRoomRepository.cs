@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Core.Repositiories
 {
-    public interface IRoomRepository
+    public interface IRoomRepository : IRepository
     {
         Task<Room> GetAsync(string number);
 

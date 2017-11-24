@@ -14,6 +14,7 @@ using RoomBooking.Infrastructure.Mappers;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using RoomBooking.Infrastructure.IoC.Modules;
+using RoomBooking.Infrastructure.IoC;
 
 namespace RoomBooking.Api
 {
@@ -37,15 +38,12 @@ namespace RoomBooking.Api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddScoped<IRoomService, RoomSerivce>();
-            services.AddScoped<IRoomRepository, InMemoryRoomRepository>();
-            services.AddSingleton(AutoMapperConfig.Initialize());
+
             services.AddMvc();
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
-            builder.RegisterModule<CommandModule>();
-            builder.RegisterModule(new SettingsModule(Configuration));
+            builder.RegisterModule(new ContainerModule(Configuration));
             ApplicationContainer = builder.Build();
 
             return new AutofacServiceProvider(ApplicationContainer);

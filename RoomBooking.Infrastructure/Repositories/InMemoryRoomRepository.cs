@@ -10,14 +10,14 @@ namespace RoomBooking.Infrastructure.Repositories
 {
     public class InMemoryRoomRepository : IRoomRepository
     {
-        private static ISet<Room> _rooms = new HashSet<Room>
-        {
-            new Room("Leasure Area", "101",false,false,true,false,true,false,false,false,false,false,true,false,false,false,false),
-            new Room("", "818",false,false,true,true,true,false,true,false,false,false,true,true,true,true,false),
-            new Room("", "819",false,false,true,true,true,false,true,false,false,false,true,true,true,false,false)
-        };
+        private static ISet<Room> _rooms = new HashSet<Room>();
+        //{
+        //    new Room("Leasure Area", "101",false,false,true,false,true,false,false,false,false,false,true,false,false,false,false),
+        //    new Room("", "818",false,false,true,true,true,false,true,false,false,false,true,true,true,true,false),
+        //    new Room("", "819",false,false,true,true,true,false,true,false,false,false,true,true,true,false,false)
+        //};
 
-        public async Task<Room> GetAsync(string number)
+    public async Task<Room> GetAsync(string number)
             => await Task.FromResult(_rooms.SingleOrDefault(x => x.RoomNumber == number));
 
         public async Task AddAsync(Room room)

@@ -1,4 +1,5 @@
-﻿using RoomBooking.Infrastructure.Commands.Rooms;
+﻿using RoomBooking.Infrastructure.Commands;
+using RoomBooking.Infrastructure.Commands.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

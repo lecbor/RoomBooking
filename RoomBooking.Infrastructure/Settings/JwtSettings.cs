@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace RoomBooking.Infrastructure.Settings
 {
-    public class GeneralSettings
+    public class JwtSettings
     {
-        public string Name { get; set; }
+        public string Key { get; set; }
 
-        public bool SeedData { get; set; }
+        public string Issuer { get; set; }
+
+        public int ExpiryMinutes { get; set; }
     }
 }

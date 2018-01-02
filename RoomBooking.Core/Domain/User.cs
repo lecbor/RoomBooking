@@ -20,13 +20,15 @@ namespace RoomBooking.Core.Domain
 
         public string FullName { get; protected set; }
 
+        public string Role { get; protected set; }
+
         public DateTime CreatedAt { get; protected set; }
 
         protected User()
         {
         }
 
-        public User(string email, string username, string password, string salt)
+        public User(string email, string username, string password, string salt, string role)
         {
             //TODO user validation
             Id = Guid.NewGuid();
@@ -34,6 +36,7 @@ namespace RoomBooking.Core.Domain
             Username = username;
             Password = password;
             Salt = salt;
+            Role = role;
             CreatedAt = DateTime.UtcNow;
         }
     }

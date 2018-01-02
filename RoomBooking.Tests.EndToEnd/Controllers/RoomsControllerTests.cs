@@ -21,7 +21,7 @@ namespace RoomBooking.Tests.EndToEnd.Controllers
         [Fact]
         public async Task given_valid_roomNumber_room_should_exist()
         {
-            var roomNumber = "819";
+            var roomNumber = "5";
             var room = await GetRoomAsync(roomNumber);
             room.RoomNumber.ShouldBeEquivalentTo(roomNumber);
         }
@@ -39,7 +39,7 @@ namespace RoomBooking.Tests.EndToEnd.Controllers
         {
             var command = new CreateRoom
             {
-                Name = "",
+                Name = "1001",
                 RoomNumber = "1001",
                 Lectern = false,
                 VotingSystem = true,

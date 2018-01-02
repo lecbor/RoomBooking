@@ -15,6 +15,9 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using RoomBooking.Infrastructure.IoC.Modules;
 using RoomBooking.Infrastructure.IoC;
+using Microsoft.IdentityModel.Tokens;
+using RoomBooking.Infrastructure.Settings;
+using System.Text;
 
 namespace RoomBooking.Api
 {
@@ -38,7 +41,7 @@ namespace RoomBooking.Api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-
+            services.AddMemoryCache();
             services.AddMvc();
 
             var builder = new ContainerBuilder();
@@ -55,6 +58,24 @@ namespace RoomBooking.Api
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            var jwtSettings = app.ApplicationServices.GetService<JwtSettings>();
+            app.UseJwtBearerAuthentication(new JwtBearerOptions
+            {
+                AutomaticAuthenticate = true,
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = jwtSettings.Issuer,
+                    ValidateAudience = false,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
+                }
+            });
+
+            var genralSettings = app.ApplicationServices.GetService<GeneralSettings>();
+            if (genralSettings.SeedData)
+            {
+                var dataInitializer = app.ApplicationServices.GetService<IDataInitializer>();
+                dataInitializer.SeedAsync();
+            }
             app.UseMvc();
             appLifetime.ApplicationStopped.Register(() => ApplicationContainer.Dispose());
         }

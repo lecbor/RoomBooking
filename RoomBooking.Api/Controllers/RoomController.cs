@@ -8,6 +8,7 @@ using RoomBooking.Infrastructure.Services;
 using RoomBooking.Infrastructure.Commands.Rooms;
 using RoomBooking.Infrastructure.Commands;
 using RoomBooking.Infrastructure.Settings;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RoomBooking.Api.Controllers
 {
@@ -25,7 +26,8 @@ namespace RoomBooking.Api.Controllers
             _roomservice = roomService;
             _settings = settings;
         }
-
+        
+        //[Authorize]
         [HttpGet("{number}")]
         public async Task<IActionResult> Get(string number)
         { 

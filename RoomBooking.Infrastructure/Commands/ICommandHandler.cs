@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RoomBooking.Infrastructure.Commands.Rooms
+namespace RoomBooking.Infrastructure.Commands
 {
     public interface ICommandHandler<T> where T : ICommand
     {

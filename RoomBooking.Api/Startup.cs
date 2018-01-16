@@ -42,7 +42,8 @@ namespace RoomBooking.Api
         {
             // Add framework services.
             services.AddMemoryCache();
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(x => x.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented);
 
             var builder = new ContainerBuilder();
             builder.Populate(services);

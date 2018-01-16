@@ -17,7 +17,7 @@ namespace RoomBooking.Infrastructure.Repositories
         //    new Room("", "819",false,false,true,true,true,false,true,false,false,false,true,true,true,false,false)
         //};
 
-    public async Task<Room> GetAsync(string number)
+        public async Task<Room> GetAsync(string number)
             => await Task.FromResult(_rooms.SingleOrDefault(x => x.RoomNumber == number));
 
         public async Task AddAsync(Room room)

@@ -11,6 +11,8 @@ namespace RoomBooking.Infrastructure.Services
     {
         Task<RoomDTO> GetAsync(string number);
 
+       // Task<RoomDTO> GetAllAsync();
+
         Task RegisterAsync(string name, string number, bool lectern, bool voting, bool sound,
                     bool magnetic, bool computer, bool interpreter, bool brain, bool led,
                     bool microphone, bool multiphone, bool lcd, bool flipchart, bool whitescren,
